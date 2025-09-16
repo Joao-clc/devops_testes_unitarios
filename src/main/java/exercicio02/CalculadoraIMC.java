@@ -4,10 +4,20 @@
  */
 package exercicio02;
 
-/**
- *
- * @author camar
- */
 public class CalculadoraIMC {
-    
+    public double calcular(double peso, double altura) {
+        if (altura <= 0) {
+            throw new IllegalArgumentException("Altura deve ser maior que zero.");
+        }
+        return peso / (altura * altura);
+    }
+
+    public String getClassificacao(double imc) {
+        if (imc < 18.5) return "Abaixo do peso";
+        if (imc < 25) return "Peso normal";
+        if (imc < 30) return "Sobrepeso";
+        if (imc < 35) return "Obesidade Grau I";
+        if (imc < 40) return "Obesidade Grau II";
+        return "Obesidade Grau III";
+    }
 }
